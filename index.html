@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Collage Maker & Editor Flutter App</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background-color: #f5f5f5;
+        }
+        
+        .sidebar {
+            width: 250px;
+            background-color: #2c3e50;
+            color: white;
+            height: 100vh;
+            position: fixed;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        
+        .sidebar-header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #34495e;
+            margin-bottom: 20px;
+        }
+        
+        .sidebar-header h2 {
+            margin: 0;
+            color: #3498db;
+        }
+        
+        .sidebar-menu {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .sidebar-menu li {
+            padding: 10px 0;
+            border-bottom: 1px solid #34495e;
+        }
+        
+        .sidebar-menu li a {
+            color: #ecf0f1;
+            text-decoration: none;
+            display: block;
+            padding: 8px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        .sidebar-menu li a:hover {
+            background-color: #34495e;
+            color: #3498db;
+        }
+        
+        .content {
+            margin-left: 290px;
+            padding: 20px;
+            flex: 1;
+            background-color: white;
+            min-height: 100vh;
+        }
+        
+        .section {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        
+        .active {
+            display: block;
+        }
+        
+        .active-menu {
+            background-color: #34495e;
+            color: #3498db !important;
+            font-weight: bold;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .app-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+        }
+        
+        .feature {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            border-left: 4px solid #3498db;
+        }
+        
+        code {
+            background-color: #e8f4f8;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #2c3e50;
+        }
+        
+        .screenshot {
+            width: 200px;
+            margin: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .screenshots-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        
+        pre {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border-left: 4px solid #3498db;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 25px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        h3 {
+            color: #3498db;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>Photo Collage Flutter</h2>
+            <p>Photo Collage Maker & EditorApp</p>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="#" class="menu-link active-menu" data-section="about">About</a></li>
+            <li><a href="#" class="menu-link" data-section="features">Features</a></li>
+            <li><a href="#" class="menu-link" data-section="setup">Flutter Setup</a></li>
+           
+            <li><a href="#" class="menu-link" data-section="usage">Usage</a></li>
+            <li><a href="#" class="menu-link" data-section="customization">App Customization</a></li>
+            <li><a href="#" class="menu-link" data-section="admob">AdMob Integration</a></li>
+        
+        </ul>
+    </div>
+    
+    <div class="content">
+        <div id="about" class="section active">
+            <h1>About Photo Collage Maker & Editor App</h1>
+            <div class="app-info">
+                <div class="app-icon">P</div>
+                <div>
+                 <p>Photo Collage Maker & Editor (Flutter) helps users design beautiful collages and edit photos with professional tools. Choose layouts and templates, add multiple images, customize backgrounds, and fine-tune with brightness, contrast, saturation, hue, and blur.</p>
+<p>Enhance creativity with stickers, emojis, frames, and advanced text controls—curve text, shadows, opacity, and rich formatting. Save, download, or share instantly. Works on both Android and iOS.</p>
+
+                 
+                </div>
+            </div>
+            
+            <h2>Key Highlights</h2>
+<ul>
+    <li>Cross-platform app built with Flutter (works on Android & iOS)</li>
+    <li>Create stunning photo collages with customizable layouts & templates</li>
+    <li>Powerful photo editing tools: crop, resize, rotate, flip, blur</li>
+    <li>40+ stylish fonts, neon text, curve text, colors, and shadows</li>
+    <li>Apply filters, frames, stickers, emojis, and tattoos</li>
+    <li>Save photos locally or share instantly on social media</li>
+    <li>Integrated with Firebase, AdMob, and push notifications</li>
+</ul>
+
+            
+            <h2>Screenshots</h2>
+            <div class="screenshots-container">
+                <img src="./image/home.jpeg" class="screenshot" alt="Home Page">
+                <img src="./image/2nd.jpeg" class="screenshot" alt="Edit Screen">
+                <img src="./image/3rd.jpeg" class="screenshot" alt="Scan">
+            </div>
+        </div>
+        
+        <div id="features" class="section">
+    <h1>App Features</h1>
+    
+    <div class="feature">
+        <h3>Collage Layouts & Templates</h3>
+        <p>Create stunning photo collages using customizable layouts and ready-made templates.</p>
+    </div>
+    
+    <div class="feature">
+        <h3>Advanced Image Editing</h3>
+        <p>Crop, resize, rotate, flip, and blur images. Adjust brightness, contrast, saturation, and hue with precision.</p>
+    </div>
+    
+    <div class="feature">
+        <h3>Text & Fonts</h3>
+        <p>Add text with 40+ stylish fonts, neon styles, curve text, opacity control, shadows, and full formatting (bold, italic, underline, line-through).</p>
+    </div>
+    
+    <div class="feature">
+        <h3>Filters, Frames & Stickers</h3>
+        <p>Apply creative filters, photo frames, stickers, emojis, and tattoo art to make photos more attractive.</p>
+    </div>
+
+    <div class="feature">
+        <h3>Beautiful Backgrounds</h3>
+        <p>Choose from solid colors, gradients, and background patterns to design unique collages.</p>
+    </div>
+
+    <div class="feature">
+        <h3>Save & Share</h3>
+        <p>Download edited images to your device or share directly to social media platforms in one tap.</p>
+    </div>
+
+    <div class="feature">
+        <h3>Google AdMob</h3>
+        <p>Integrated with AdMob for easy monetization and revenue generation.</p>
+    </div>
+
+    <div class="feature">
+        <h3>Multi-Language Support</h3>
+        <p>Supports multiple languages including English, Bangla, and more for global users.</p>
+    </div>
+</div>
+
+        
+        <div id="setup" class="section">
+            <h1>Flutter Setup Guide</h1>
+            
+            <h2>Prerequisites</h2>
+            <ol>
+                <li>Download and install <a href="https://flutter.dev/docs/get-started/install" target="_blank">Flutter SDK</a></li>
+                <li>Install Android Studio or Xcode (for iOS development)</li>
+                <li>Install VS Code or Android Studio with Flutter plugin</li>
+            </ol>
+            
+            <h2>Setting Up Flutter</h2>
+            <ol>
+                <li>Extract the Flutter SDK zip file to your desired location</li>
+                <li>Add Flutter to your PATH:
+                    <pre><code>export PATH="$PATH:`pwd`/flutter/bin"</code></pre>
+                </li>
+                <li>Run flutter doctor to check for dependencies:
+                    <pre><code>flutter doctor</code></pre>
+                </li>
+                <li>Install any missing dependencies as indicated by flutter doctor</li>
+            </ol>
+            
+            <h2>Configuring an Editor</h2>
+            <p>For VS Code:</p>
+            <ol>
+                <li>Install the Flutter extension from the marketplace</li>
+                <li>Install the Dart extension</li>
+                <li>Configure the Flutter SDK path in settings</li>
+            </ol>
+        </div>
+        
+        <div id="installation" class="section">
+            <h1>Installation</h1>
+            
+            <h2>From Source</h2>
+            <ol>
+                <li>Clone the repository:
+                    <pre><code>git clone https://github.com/yourusername/docscan_flutter.git</code></pre>
+                </li>
+                <li>Navigate to the project directory:
+                    <pre><code>cd docscan_flutter</code></pre>
+                </li>
+                <li>Get dependencies:
+                    <pre><code>flutter pub get</code></pre>
+                </li>
+                <li>Run the app:
+                    <pre><code>flutter run</code></pre>
+                </li>
+            </ol>
+            
+            <h2>From Play Store/App Store</h2>
+            <p>Download the app from:</p>
+            <ul>
+                <li><a href="#" target="_blank">Google Play Store</a></li>
+                <li><a href="#" target="_blank">Apple App Store</a></li>
+            </ul>
+        </div>
+        
+      <div id="usage" class="section">
+    <h1>How to Use</h1>
+    
+    <h2>Create a Collage</h2>
+    <ol>
+        <li>Open the Collage Maker – Photo Editor app</li>
+        <li>Tap the <strong>“Create Collage”</strong> button</li>
+        <li>Select multiple photos from your gallery</li>
+        <li>Choose a layout or template for your collage</li>
+        <li>Adjust image positions, crop, or resize as needed</li>
+        <li>Customize with backgrounds, stickers, text, and filters</li>
+        <li>Save your collage or share directly on social media</li>
+    </ol>
+    
+    <h2>Edit a Photo</h2>
+    <ol>
+        <li>Tap on <strong>“Edit Photo”</strong> from the home screen</li>
+        <li>Select a single photo from your gallery</li>
+        <li>Apply filters, frames, and enhancements (brightness, contrast, saturation, hue, blur)</li>
+        <li>Add text with 40+ fonts, neon effects, shadows, and curve styles</li>
+        <li>Insert stickers, emojis, or tattoos for a creative touch</li>
+        <li>Save your edited photo or share instantly</li>
+    </ol>
+    
+    <h2>Save & Share</h2>
+    <ul>
+        <li>Save your collage or photo to your device</li>
+        <li>Share instantly on social platforms like Facebook, Instagram, or WhatsApp</li>
+        <li>Download high-quality images in JPG/PNG format</li>
+    </ul>
+</div>
+
+
+
+
+        
+        <div id="customization" class="section">
+            <h1>App Customization</h1>
+            
+            <h2>Changing Package Name</h2>
+            <p>To change the package name of your Flutter app:</p>
+            
+            <h3>For Android:</h3>
+            <ol>
+                <li>Open <code>android/app/build.gradle</code></li>
+                <li>Change the <code>applicationId</code> in the defaultConfig section</li>
+                <li>Rename the package directory structure in <code>android/app/src/main/kotlin</code> (or <code>java</code>) to match your new package name</li>
+                <li>Update the package name in <code>AndroidManifest.xml</code></li>
+            </ol>
+            
+            <h3>For iOS:</h3>
+            <ol>
+                <li>Open the iOS project in Xcode (<code>ios/Runner.xcworkspace</code>)</li>
+                <li>Select the Runner project in the project navigator</li>
+                <li>Change the bundle identifier in the General tab</li>
+                <li>Update the bundle identifier in <code>Info.plist</code></li>
+            </ol>
+            
+            <h2>Changing App Name</h2>
+            <ol>
+                <li>For Android: Update <code>android/app/src/main/AndroidManifest.xml</code> (android:label)</li>
+                <li>For iOS: Update <code>ios/Runner/Info.plist</code> (CFBundleDisplayName)</li>
+            </ol>
+            
+            <h2>Changing App Icon</h2>
+            <p>Use the <code>flutter_launcher_icons</code> package:</p>
+            <ol>
+                <li>Add to <code>pubspec.yaml</code>:
+                    <pre><code>dev_dependencies:
+  flutter_launcher_icons: "^0.13.1"
+            
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/icon.png"</code></pre>
+                </li>
+                <li>Place your icon image at the specified path</li>
+                <li>Run: <code>flutter pub run flutter_launcher_icons:main</code></li>
+            </ol>
+        </div>
+        
+        <div id="admob" class="section">
+            <h1>Google AdMob Integration</h1>
+            
+            <h2>Setup AdMob Account</h2>
+            <ol>
+                <li>Create an account at <a href="https://admob.google.com" target="_blank">admob.google.com</a></li>
+                <li>Add your app to AdMob dashboard</li>
+                <li>Create ad units for banner, interstitial, and rewarded ads</li>
+            </ol>
+            
+            <h2>Adding AdMob to Flutter</h2>
+            <ol>
+                <li>Add dependencies to <code>pubspec.yaml</code>:
+                    <pre><code>dependencies:
+  google_mobile_ads: ^4.0.0</code></pre>
+                </li>
+                <li>Initialize AdMob in your main.dart:
+                    <pre><code>import 'package:google_mobile_ads/google_mobile_ads.dart';
+
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  MobileAds.instance.initialize();
+  runApp(MyApp());
+}</code></pre>
+                </li>
+            </ol>
+            
+            <h2>Implementing Banner Ads</h2>
+            <pre><code>BannerAd(
+  adUnitId: 'your-ad-unit-id',
+  size: AdSize.banner,
+  request: AdRequest(),
+  listener: BannerAdListener(),
+).load();</code></pre>
+            
+            <h2>Implementing Interstitial Ads</h2>
+            <pre><code>InterstitialAd.load(
+  adUnitId: 'your-interstitial-ad-unit-id',
+  request: AdRequest(),
+  adLoadCallback: InterstitialAdLoadCallback(
+    onAdLoaded: (InterstitialAd ad) {
+      // Store the ad to show later
+      this.interstitialAd = ad;
+    },
+    onAdFailedToLoad: (LoadAdError error) {
+      print('InterstitialAd failed to load: $error');
+    },
+  ),
+);</code></pre>
+        </div>
+        
+     
+        
+       
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuLinks = document.querySelectorAll('.menu-link');
+            
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links and sections
+                    menuLinks.forEach(l => l.classList.remove('active-menu'));
+                    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active-menu');
+                    
+                    // Show corresponding section
+                    const sectionId = this.getAttribute('data-section');
+                    document.getElementById(sectionId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
